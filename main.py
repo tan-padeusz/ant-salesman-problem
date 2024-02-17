@@ -1,11 +1,11 @@
-from FileHandler import FileHandler
+from DistanceGrid import DistanceGrid
 
 
 if __name__ == "__main__":
     file_path = "test_file.txt"
     delimiter = ";"
-    matrix, error = FileHandler.load_file(file_path, delimiter)
-    if error:
-        print(error)
+    grid = DistanceGrid(file_path, delimiter)
+    if grid.has_error():
+        print(grid.get_error())
     else:
-        print("Loading was successful!")
+        print("Distance grid created successfully!")
