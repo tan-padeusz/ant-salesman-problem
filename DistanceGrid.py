@@ -87,4 +87,3 @@ class DistanceGrid:
         for index in range(size):
             float_grid[index][index] = 0
         return float_grid
-
