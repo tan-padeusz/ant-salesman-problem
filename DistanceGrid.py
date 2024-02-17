@@ -35,7 +35,7 @@ class DistanceGrid:
     def get_size(self) -> int:
         return self.__size
 
-    def get_distance(self, start: int, stop: int) -> float:
+    def distance_between(self, start: int, stop: int) -> float:
         return self.__grid[start][stop]
 
     @staticmethod

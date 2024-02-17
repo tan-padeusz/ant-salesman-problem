@@ -15,17 +15,17 @@ class Ant:
             pheromone_sum = Ant.__sum_possible_routes_pheromones(pheromone_grid, route[-1], possible_destinations)
             for index in range(len(possible_destinations)):
                 possible_destination = possible_destinations[index]
-                destination_pheromone = pheromone_grid.get_pheromones_at(route[-1], possible_destination)
+                destination_pheromone = pheromone_grid.pheromones_between(route[-1], possible_destination)
                 random_float = random()
                 if random_float < (destination_pheromone / pheromone_sum):
                     route.append(possible_destination)
-                    distance += distance_grid.get_distance(route[-2], route[-1])
+                    distance += distance_grid.distance_between(route[-2], route[-1])
                     del possible_destinations[index]
                     break
                 else:
                     pheromone_sum -= destination_pheromone
 
-        distance += distance_grid.get_distance(route[-1], route[0])
+        distance += distance_grid.distance_between(route[-1], route[0])
         self.__route = route
         self.__distance = distance
 
@@ -39,5 +39,5 @@ class Ant:
     def __sum_possible_routes_pheromones(pheromone_grid: PheromoneGrid, start: int, possible_destinations: list[int]) -> float:
         pheromone_sum = 0.0
         for possible_destination in possible_destinations:
-            pheromone_sum += pheromone_grid.get_pheromones_at(start, possible_destination)
+            pheromone_sum += pheromone_grid.pheromones_between(start, possible_destination)
         return pheromone_sum

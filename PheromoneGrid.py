@@ -15,11 +15,11 @@ class PheromoneGrid:
     def get_size(self) -> int:
         return self.__size
 
-    def get_pheromones_at(self, start: int, stop: int) -> float:
+    def pheromones_between(self, start: int, stop: int) -> float:
         return self.__grid[start][stop]
 
-    def deposit_pheromones_at(self, start: int, stop: int, delta: float):
-        self.__grid[start][stop] += delta
+    def deposit_pheromones_between(self, start: int, stop: int, value: float):
+        self.__grid[start][stop] += value
 
     def evaporate_pheromones(self, rho: float):
         for row in range(self.__size):
