@@ -1,0 +1,9 @@
+properties = {
+    "DATA_FILE_PATH": "test_file.txt",
+    "DATA_FILE_DELIMITER": ";",
+    "INITIAL_PHEROMONES": 1.0,
+    "PHEROMONES_DELTA": 1.0,
+    "PHEROMONES_EVAPORATION_RATE": 0.6,
+    "ITERATION_NUMBER": 50,
+    "COLONY_SIZE": 1000
+}

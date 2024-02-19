@@ -12,7 +12,7 @@ class DistanceGrid:
     def __init__(self, file_path: str, delimiter: str):
         self.__error = ""
         italic_file_path = "\x1B[3m" + file_path + "\x1B[0m"
-        base_error = "Error while loading file " + italic_file_path + "!\n"
+        base_error = "Error while loading data file " + italic_file_path + "!\n"
         grid = []
         try:
             grid = DistanceGrid.__load_file_content_into_grid(file_path, delimiter)

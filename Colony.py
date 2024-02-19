@@ -9,7 +9,7 @@ class Colony:
         best_ant = None
         for index in range(size):
             ant = Ant(distance_grid, pheromone_grid)
-            if best_ant is None or ant.get_distance() < best_ant.get_distance():
+            if best_ant is None or ant.get_travelled_distance() < best_ant.get_travelled_distance():
                 best_ant = ant
             ants.append(ant)
         self.__ants = ants
