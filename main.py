@@ -4,13 +4,9 @@ from properties import Keys, Properties
 
 if __name__ == "__main__":
     properties = Properties("ant.properties")
-    if properties.has_error():
-        print(properties.get_error())
-        exit()
+    properties.confirm_success()
     distance_grid = DistanceGrid(properties.get_str_property(Keys.get_data_file_path_key()), properties.get_str_property(Keys.get_data_file_delimiter_key()))
-    if distance_grid.has_error():
-        print(distance_grid.get_error())
-        exit()
+    distance_grid.confirm_success()
     pheromone_grid = PheromoneGrid(distance_grid.get_size(), properties.get_float_property(Keys.get_pheromones_initial_amount_key()))
     best_ant = None
     for iteration in range(properties.get_int_property(Keys.get_iteration_number_key())):

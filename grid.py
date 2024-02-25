@@ -27,11 +27,10 @@ class DistanceGrid:
             self.__grid = grid
             self.__size = len(grid)
 
-    def has_error(self) -> bool:
-        return self.__error != ""
-
-    def get_error(self) -> str:
-        return self.__error
+    def confirm_success(self):
+        if self.__error != "":
+            print(self.__error)
+            exit()
 
     def get_size(self) -> int:
         return self.__size

@@ -1,4 +1,5 @@
 from os import path
+from sys import exit
 
 
 class Keys:
@@ -79,11 +80,10 @@ class Properties:
         finally:
             self.__properties = properties
 
-    def has_error(self) -> bool:
-        return self.__error != ""
-
-    def get_error(self) -> str:
-        return self.__error
+    def confirm_success(self):
+        if self.__error != "":
+            print(self.__error)
+            exit()
 
     @staticmethod
     def __validate_file_path(file_path: str):
