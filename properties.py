@@ -78,9 +78,10 @@ class Properties:
             base_error = "Error while loading properties file!\n"
             self.__error = base_error + error.get_message()
         finally:
+            self.__confirm_success()
             self.__properties = properties
 
-    def confirm_success(self):
+    def __confirm_success(self):
         if self.__error != "":
             print(self.__error)
             exit()

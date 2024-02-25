@@ -24,10 +24,11 @@ class DistanceGrid:
             grid = []
             self.__error = base_error + error.get_message()
         finally:
+            self.__confirm_success()
             self.__grid = grid
             self.__size = len(grid)
 
-    def confirm_success(self):
+    def __confirm_success(self):
         if self.__error != "":
             print(self.__error)
             exit()
